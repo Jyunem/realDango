@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SEO Meta Tags -->
+    <title>단고 - AI 기반 중국어 단어 학습 웹앱</title>
+    <meta name="description" content="단고(Dango)는 AI를 활용하여 중국어 단어 학습을 간편하고 효과적으로 만들어주는 웹앱입니다. 쉽고 빠른 중국어 학습을 경험해보세요.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dango-ai.web.app/">
+    <meta property="og:title" content="단고 - AI 기반 중국어 단어 학습 웹앱">
+    <meta property="og:description"
+        content="단고(Dango)는 AI를 활용하여 중국어 단어 학습을 간편하고 효과적으로 만들어주는 웹앱입니다. 쉽고 빠른 중국어 학습을 경험해보세요.">
+    <meta property="og:image" content="icon/android-chrome-512x512.png"> <!-- 여기에 웹사이트를 대표하는 이미지 URL을 추가하세요 -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dango-ai.web.app/">
+    <meta property="twitter:title" content="단고 - AI 기반 중국어 단어 학습 웹앱">
+    <meta property="twitter:description"
+        content="단고(Dango)는 AI를 활용하여 중국어 단어 학습을 간편하고 효과적으로 만들어주는 웹앱입니다. 쉽고 빠른 중국어 학습을 경험해보세요.">
+    <meta property="twitter:image" content="icon/android-chrome-512x512.png"> <!-- 여기에 웹사이트를 대표하는 이미지 URL을 추가하세요 -->
+
+    <title>단고:한손에 단어장</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9633000487695639"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+</head>
+
+<body>
+    <div class="app">
+        <div class="nav">
+            <div class="logo">
+                <a href="index.html">DanGo</a>
+                <p>verson : beta 4.12.0</p>
+            </div>
+            <div class="btn-container">
+                <div class="help">
+                    <a href="help.html">
+                        <img src="svg/help.svg">
+                    </a>
+                    <p>사용법</p>
+                </div>
+                <div class="support">
+                    <a href="https://open.kakao.com/o/sgbFBsif" target="_blank">
+                        <img src="svg/support_agent.svg">
+                    </a>
+                    <p>문의&지원</p>
+                </div>
+                <div class="donate" style="display:none;">
+                    <a href="https://toss.me/DanGoAi" target="_blank">
+                        <img src="svg/donate.svg">
+                    </a>
+                    <p>후원</p>
+                </div>
+                <div class="logout" style="display:none;">
+                    <img src="svg/logout.svg">
+                    <p>로그아웃</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="wordbook">
+                    <span class="slider">
+                        <div>저장목록</div>
+                    </span>
+                </label>
+            </div>
+        </div>
+        <div class="kakao-ad">
+            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-QZg1hjqJzw4l0eeW" data-ad-width="320"
+                data-ad-height="100"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+        <div class="main-area">
+            <div class="word-input">
+                <textarea id="word-input" placeholder="중국어 또는 한국어 단어를 입력하여 학습을 시작합니다." resize="none"></textarea>
+                <button id="translate">
+                    <img id="translate-icon" src="svg/translate.svg">
+                    <img id="loading-icon" src="svg/loading.svg" style="display: none;">
+                </button>
+            </div>
+        </div>
+        <div class="sub-area" style="display: none;">
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="module" src="index.js"></script>

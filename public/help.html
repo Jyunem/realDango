@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SEO Meta Tags -->
+    <title>단고 - AI 기반 중국어 단어 학습 웹앱</title>
+    <meta name="description" content="단고(Dango)는 AI를 활용하여 중국어 단어 학습을 간편하고 효과적으로 만들어주는 웹앱입니다. 쉽고 빠른 중국어 학습을 경험해보세요.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dango-ai.web.app/">
+    <meta property="og:title" content="단고 - AI 기반 중국어 단어 학습 웹앱">
+    <meta property="og:description"
+        content="단고(Dango)는 AI를 활용하여 중국어 단어 학습을 간편하고 효과적으로 만들어주는 웹앱입니다. 쉽고 빠른 중국어 학습을 경험해보세요.">
+    <meta property="og:image" content="icon/android-chrome-512x512.png"> <!-- 여기에 웹사이트를 대표하는 이미지 URL을 추가하세요 -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dango-ai.web.app/">
+    <meta property="twitter:title" content="단고 - AI 기반 중국어 단어 학습 웹앱">
+    <meta property="twitter:description"
+        content="단고(Dango)는 AI를 활용하여 중국어 단어 학습을 간편하고 효과적으로 만들어주는 웹앱입니다. 쉽고 빠른 중국어 학습을 경험해보세요.">
+    <meta property="twitter:image" content="icon/android-chrome-512x512.png"> <!-- 여기에 웹사이트를 대표하는 이미지 URL을 추가하세요 -->
+
+    <title>단고:한손에 단어장</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9633000487695639"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+</head>
+
+<body>
+    <div class="app">
+        <div class="nav">
+            <div class="logo">
+                <a href="index.html">DanGo</a>
+                <p>verson : beta 4.11.0</p>
+            </div>
+            <!-- <div class="btn-container">
+                <div class="help">
+                    <a href="help.html">
+                        <img src="svg/help.svg">
+                    </a>
+                    <p>사용법</p>
+                </div>
+                <div class="support">
+                    <a href="https://open.kakao.com/o/sgbFBsif" target="_blank">
+                        <img src="svg/support_agent.svg">
+                    </a>
+                    <p>문의&지원</p>
+                </div>
+                <div class="donate" style="display:none;">
+                    <a href="https://toss.me/DanGoAi" target="_blank">
+                        <img src="svg/donate.svg">
+                    </a>
+                    <p>후원</p>
+                </div>
+                <div class="logout" style="display:none;">
+                    <img src="svg/logout.svg">
+                    <p>로그아웃</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="wordbook">
+                    <span class="slider">
+                        <div>저장목록</div>
+                    </span>
+                </label>
+            </div> -->
+        </div>
+        <div class="kakao-ad b">
+            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-QZg1hjqJzw4l0eeW" data-ad-width="320"
+                data-ad-height="100"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+        <div class="main-area">
+            <div class="updated-list">
+                <div class="updated-item">
+                    <h2>beta 4.12.0 : 사용법 안내 기능 추가</h2>
+                    <h2>beta 4.11.0 : 한글로도 단어 검색 가능, 문장 번역 기능 추가</h2>
+
+                </div>
+            </div>
+            <div class="help-list">
+
+                <div class="help-item">
+                    <h2>로그인하기, 저장목록 사용하기</h2>
+                    <div class="content">
+                        <div class="notMobile">
+                            <p>로그인시 더 많은 기능을 지원합니다!</p> <br>
+                            <p>자동 오답 저장, 테스트 및 듣기 기능 지원, 단어장 기능 지원</p> <br>
+                            <p>추후 더 많은 기능 추가 예정</p> <br>
+                            <br>
+                            <p>로그인 창이 표시되지 않을시, 아래와 같이 팝업차단을 해제 후 다시 시도해주세요!</p>
+                            <img id="defaultImage" src="img/로그인.jpeg">
+                        </div>
+
+                        <!-- 모바일용 이미지들을 담을 컨테이너 -->
+                        <div class="mobileImages" style="display: none;">
+                            <p>로그인시 더 많은 기능을 지원합니다!</p><br>
+                            <p>자동 오답 저장, 테스트 및 듣기 기능 지원, 단어장 기능 지원</p><br>
+                            <p>추후 더 많은 기능 추가 예정</p><br>
+                            <img src="img/로그인1.jpeg">
+                            <p>로그인 창이 표시되지 않을시, 아래와 같이 팝업차단을 해제 후 다시 시도해주세요!</p><br>
+                            <img src="img/로그인2.jpeg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-item">
+                    <h2>학습 시작하기 & 단어장 생성하기</h2>
+                    <div class="content">
+                        <div class="notMobile">
+                            <p>메인 화면으로 돌아갈땐 상단에 "DanGo"를 클릭하시면 됩니다</p><br>
+
+                            <img id="defaultImage" src="img/시작하기.jpeg">
+
+                            <p>어느 화면에서든 단어를 클릭하면 단어의 소리를 들려줍니다.</p><br>
+
+                            <img id="defaultImage" src="img/학습.jpeg">
+                        </div>
+                        <!-- 모바일용 이미지들을 담을 컨테이너 -->
+                        <div class="mobileImages" style="display: none;">
+                            <p>메인 화면으로 돌아갈땐 상단에 "DanGo"를 클릭하시면 됩니다</p><br>
+                            <img src="img/시작하기1.jpeg">
+                            <p>중국어 단어 또는 한국어를 입력하면 뜻과 병음을 찾아줍니다.</p><br>
+                            <img src="img/시작하기2.jpeg">
+                            <p>직접 뜻을 수정하거나 단어를 클릭하여 발음을 확인 가능합니다.</p><br>
+                            <p>어느 화면에서든 단어를 클릭하면 단어의 소리를 들려줍니다.</p>
+                            <img src="img/시작하기3.jpeg">
+                            <p>단어 각각을 학습할 수 있도록 지원합니다. 아래와 같은 순서로 공부해보세요.</p><br>
+
+                            <p>1. 단어와 맞는 뜻을 찾아보세요!</p><br>
+                            <p>2. 단어와 뜻에 맞는 병음을 찾아보세요!</p><br>
+                            <p>3. 자신의 오답을 확인하며 스스로 피드백 해보세요!</p><br>
+
+                            <img src="img/학습1.jpeg">
+
+                            <p>모든 학습이 끝나면 오답을 표시해줍니다.</p><br>
+                            <p>'다시' 버튼을 눌러 재학습을 해보세요! 재학습시 오답목록만 따로 단어장을 생성해줍니다!</p>
+
+                            <img src="img/학습2.jpeg">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-item">
+                    <h2>어플처럼 사용하기</h2>
+                    <div class="content">
+                        <div class="notMobile">
+                            <p>1.공유 버튼 누르기</p><br>
+                            <p>2.홈 화면에 추가 클릭</p><br>
+                            <p>3.바탕화면에 아이콘 생성</p><br>
+
+                            <img id="defaultImage" src="img/desktop-어플처럼 사용하기.jpeg" alt="어플처럼 사용하기">
+                        </div>
+                        <!-- 모바일용 이미지들을 담을 컨테이너 -->
+                        <div class="mobileImages" style="display: none;">
+                            <p>공유 버튼 누르기</p><br>
+                            <img src="img/mobile-어플처럼사용하기1.jpeg" alt="어플처럼 사용하기 1">
+                            <p>홈 화면에 추가 클릭</p><br>
+                            <img src="img/mobile-어플처럼사용하기2.jpeg" alt="어플처럼 사용하기 2">
+                            <p>바탕화면에 아이콘 생성</p><br>
+                            <img src="img/mobile-어플처럼사용하기3.jpeg" alt="어플처럼 사용하기 3">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="help-item">
+                    <h2>저장된 단어 목록 사용하기</h2>
+                    <div class="content">
+                        <div class="notMobile">
+                            <p>로그인시, 저장된 단어목록을 사용할 수 있습니다.</p>
+                            <p>저장된 단어는 자동으로 분류되며, 추가 기능을 사용할 수 있습니다.</p><br>
+                            <img id="defaultImage" src="img/단어목록.jpeg">
+                            <p>테스트 기능 : 주어진 단어로 뜻과 병음을 맞춰보세요!</p>
+                            <p>모든 문제를 푼 후 오답과 정답률를 확인해보세요.</p><br>
+
+                            <p>듣기 : 단어를 듣고 직접 뜻과 단어를 적어보세요!</p>
+                            <p>자동진행을 활성화 하여 프리핸즈로 테스트를 볼 수 있습니다</p>
+                            <p>학습모드를 활성화 할 경우, 음성 다시듣기와 다음문제 진행을 수동으로 조절할 수 있습니다.</p>
+                            <p>테스트가 끝나면 진행했던 단어 순서대로 뜻과 한자를 표시해줍니다! 직접 채점해보세요!</p><br>
+
+                            <p>단어장 : 틈틈히 단어를 외울수 있도록 단어만 표시되는 기능입니다!</p>
+                            <p>단어장 수정 : 상단의 단어장 제목을 클릭하여 자신만의 단어장 이름을 지어주세요</p>
+                            <p>단어 뜻 수정 : 이곳에서 단어의 뜻을 변경할 경우 변경된 뜻으로 저장됩니다!</p><br>
+
+                            <img id="defaultImage" src="img/추가기능.jpeg">
+
+
+                        </div>
+                        <!-- 모바일용 이미지들을 담을 컨테이너 -->
+                        <div class="mobileImages" style="display: none;">
+                            <p>로그인시, 저장된 단어목록을 사용할 수 있습니다.</p><br>
+                            
+                            <img src="img/단어목록1.jpeg">
+                            
+                            <p>저장된 단어는 자동으로 분류되며, 추가 기능을 사용할 수 있습니다.</p><br>
+                            <img src="img/단어목록2.jpeg">
+                          
+
+                            <p>테스트 기능 : 주어진 단어로 뜻과 병음을 맞춰보세요!</p>
+                            <p>모든 문제를 푼 후 오답과 정답률를 확인해보세요.</p>
+                            <img id="defaultImage" src="img/추가기능1.jpeg">
+
+                            <p>듣기 : 단어를 듣고 직접 뜻과 단어를 적어보세요!</p>
+                            <p>자동진행을 활성화 하여 프리핸즈로 테스트를 볼 수 있습니다</p>
+                            <p>학습모드를 활성화 할 경우, 음성 다시듣기와 다음문제 진행을 수동으로 조절할 수 있습니다.</p>
+                            <p>테스트가 끝나면 진행했던 단어 순서대로 뜻과 한자를 표시해줍니다! 직접 채점해보세요!</p><br>
+                            <img id="defaultImage" src="img/추가기능2.jpeg">
+
+                            <p>단어장 : 틈틈히 단어를 외울수 있도록 단어만 표시되는 기능입니다!</p>
+                            <p>단어장 수정 : 상단의 단어장 제목을 클릭하여 자신만의 단어장 이름을 지어주세요</p>
+                            <p>단어 뜻 수정 : 이곳에서 단어의 뜻을 변경할 경우 변경된 뜻으로 저장됩니다!</p><br>
+                            <img id="defaultImage" src="img/추가기능3.jpeg">
+
+                          
+                        </div>
+                    </div>
+                </div>
+                <!-- 추가 게시물 -->
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="module" src="help.js"></script>
